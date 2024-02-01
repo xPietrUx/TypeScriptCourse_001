@@ -14,7 +14,10 @@ const tasksContainerElement: HTMLElement = document.querySelector('.tasks');
 interface Task {
   name: string;
   done: boolean;
+  category?: string;
 }
+
+const categories: string[] = ['general', 'work', 'gym', 'hobby'];
 
 const tasks: Task[] = [
   {
@@ -24,6 +27,7 @@ const tasks: Task[] = [
   {
     name: 'Gym',
     done: true,
+    category: 'gym',
   },
   {
     name: 'Feed a cat',
@@ -40,6 +44,9 @@ const render = () => {
   tasksContainerElement.innerHTML = '';
   tasks.forEach((task, index) => {
     const taskElement: HTMLElement = document.createElement('li');
+    if (task.category) {
+      taskElement.classList.add(task.category);
+    }
     const id: string = `task-${index}`;
 
     const labelElement: HTMLLabelElement = document.createElement('label');

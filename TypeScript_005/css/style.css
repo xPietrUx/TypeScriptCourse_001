@@ -87,3 +87,16 @@ button:hover {
 .work {
   text-decoration: underline;
 }
+
+.gym {
+  color: darkblue;
+  list-style: circle;
+}
+
+.hobby {
+  color: darkorange;
+}
+
+.work {
+  text-decoration: overline;
+}
