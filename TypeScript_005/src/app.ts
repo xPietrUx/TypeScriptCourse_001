@@ -19,7 +19,7 @@ let selectedCategory: Category;
 //     done: false
 // }
 
-const categories: Category[] = ['general', 'work', 'gym', 'hobby'];
+const categories: Category[] = ['general', 'work', 'gym', 'hobby', 'social'];
 
 const tasks: Task[] = [
   {
