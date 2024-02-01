@@ -11,10 +11,12 @@ const tasksContainerElement: HTMLElement = document.querySelector('.tasks');
 //     done: false
 // }
 
-const tasks: {
+interface Task {
   name: string;
   done: boolean;
-}[] = [
+}
+
+const tasks: Task[] = [
   {
     name: 'Throw out rubbish',
     done: false,
@@ -60,14 +62,14 @@ const render = () => {
   });
 };
 
-const addTask = (taskName: string) => {
-  tasks.push({ name: taskName, done: false });
+const addTask = (task: Task) => {
+  tasks.push(task);
 };
 
 addButtonElement.addEventListener('click', (event: Event) => {
   event.preventDefault();
   console.log(taskNameInputElement.value);
-  addTask(String(taskNameInputElement.value));
+  addTask({ name: String(taskNameInputElement.value), done: false });
   render();
 });
 
