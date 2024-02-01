@@ -14,7 +14,7 @@ const tasksContainerElement: HTMLElement = document.querySelector('.tasks');
 interface Task {
   name: string;
   done: boolean;
-  category?: string;
+  category?: 'general' | 'work' | 'gym' | 'hobby';
 }
 
 const categories: string[] = ['general', 'work', 'gym', 'hobby'];
